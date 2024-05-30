@@ -1,0 +1,12 @@
+.App {
+    display: flex;
+    box-sizing: border-box;
+    margin: 0;
+    flex-direction: row;
+    justify-content: start;
+    padding: 10px;
+}
+
+.WardStateContainer {
+    flex: 1;
+}
