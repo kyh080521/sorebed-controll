@@ -30,6 +30,24 @@
                 "missed" : 0,
                 "fall" : 1
             }
+        },
+        {
+            "id": 4,
+            "name" : "kane",
+            "roomNumber" : 202,
+            "state" : {
+                "missed" : 0,
+                "fall" : 1
+            }
+        },
+        {
+            "id": 5,
+            "name" : "cole",
+            "roomNumber" : 203,
+            "state" : {
+                "missed" : 0,
+                "fall" : 1
+            }
         }
     ]
 }

@@ -1,12 +1,38 @@
 .wardState {
-    width: 50%;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
     box-shadow: 1px 1px 3px 1px #dadce0;
+    padding: 10px;
+
+}
+
+.btnContainer {
+    margin-bottom: 10px;
+    border-bottom: solid 2px;
+    border-color: #dadce0;
+    padding-bottom : 10px
+}
+
+.patientContainer {
+    display: flex;
+    flex-direction: row;
+    padding : 0px;
+    margin : 0px;
+    flex-wrap: wrap ;
+    justify-content: space-evenly;
 }
 
 .patient {
     display: flex;
     flex-direction: column;
+    height: 90px;
+    width: 90px;
+    box-shadow: 1px 1px 3px 1px #dadce0;
+    border-radius: 10%;
+    padding : 10px;
+    margin : 0px;
 }
 
 .patientName {

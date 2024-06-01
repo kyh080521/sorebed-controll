@@ -4,7 +4,6 @@ import axios from "axios"
 import styles from '../styles/wardState.module.css'
 
 function Users() {
-    const [stateBtns, setStateBtns] = useState(null);
     const [users, setUsers] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -39,22 +38,27 @@ function Users() {
 
     return (
         <div className={styles.wardState}>
-            <ul>
+            <div className={styles.btnContainer}>
+                <button onClick={fetchUsers}>다시 불러오기</button>
+            </div>
+            <ul className={styles.patientContainer}>
                 {users.map(user => (
                     <div className = {styles.patient} key={user.id}>
                         <span className = {styles.patientRoomId}>{user.roomNumber}</span> 
                         <span className = {styles.patientName}>{user.name}</span> 
                         <div claaName = {styles.patientState}>
-                            
+                            <div className = {styles.patientStateBtn}>
+
+                            </div>
                         </div>
                     </div>
                 ))}
             </ul>
-            <button onClick={fetchUsers}>다시 불러오기</button>
         </div>
     );
 };
 
+export default Users;
 /* 
     <ul className={style.stateBtnContainer}>
         {stateBtns.map(stateBtn => {
@@ -63,5 +67,3 @@ function Users() {
     </ul> 
 */
 //https://jsonplaceholder.typicode.com/users
-
-export default Users;
