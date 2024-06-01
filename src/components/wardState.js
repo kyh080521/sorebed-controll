@@ -1,11 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios"
 
-import style from '../styles/wardState.module.css'
-import API from '../function/API';
-
+import styles from '../styles/wardState.module.css'
 
 function Users() {
+    const [stateBtns, setStateBtns] = useState(null);
     const [users, setUsers] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -18,9 +17,10 @@ function Users() {
             setLoading(true);
 
             const response = await axios.get(
-                'https://jsonplaceholder.typicode.com/users'
+                'http://localhost:4000/users'
             );
 
+            console.log(users)
             setUsers(response.data); // 데이터는 response.data 안에 들어있습니다.
         } catch (e) { //에러 발생 시 실행 코드
             setError(e);
@@ -34,23 +34,34 @@ function Users() {
 
     if (loading) return <div>로딩중..</div>;
     if (error) return <div>에러가 발생했습니다</div>;
-
     // 아직 users가 받아와 지지 않았을 때는 아무것도 표시되지 않도록 해줍니다.
     if (!users) return null;
 
-    // 드디어 users가 성공적으로 받아와 진 상태입니다.
     return (
-        <div>
+        <div className={styles.wardState}>
             <ul>
                 {users.map(user => (
-                    <li key={user.id}>
-                        {user.username} ({user.name})
-                    </li>
+                    <div className = {styles.patient} key={user.id}>
+                        <span className = {styles.patientRoomId}>{user.roomNumber}</span> 
+                        <span className = {styles.patientName}>{user.name}</span> 
+                        <div claaName = {styles.patientState}>
+                            
+                        </div>
+                    </div>
                 ))}
             </ul>
             <button onClick={fetchUsers}>다시 불러오기</button>
         </div>
     );
 };
+
+/* 
+    <ul className={style.stateBtnContainer}>
+        {stateBtns.map(stateBtn => {
+            <li key = {stateBtn.id}>{stateBtn.name}</li>
+        })}
+    </ul> 
+*/
+//https://jsonplaceholder.typicode.com/users
 
 export default Users;

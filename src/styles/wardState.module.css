@@ -1,9 +1,28 @@
-.wardContainer {
+.wardState {
     width: 50%;
     height: 100vh;
     box-shadow: 1px 1px 3px 1px #dadce0;
 }
 
-.word {
-    margin: 0;
+.patient {
+    display: flex;
+    flex-direction: column;
+}
+
+.patientName {
+    text-align: center;
+}
+
+.patientRoomId { 
+    text-align: center;
+}
+
+.patientState {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.stateBtnContainer {
+    flex-direction: row;
 }

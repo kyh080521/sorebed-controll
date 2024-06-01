@@ -1,0 +1,35 @@
+{
+    "token": {
+        "access_token": "9k3kljnslkdj_34lk2j34lks09sv",
+        "userId": 123
+    },
+    "users": [
+        {
+            "id": 1,
+            "name" : "ryan",
+            "roomNumber" : 201,
+            "state" : {
+                "missed" : 0,
+                "fall" : 0
+            }
+        },
+        {
+            "id": 2,
+            "name" : "john",
+            "roomNumber" : 201,
+            "state" : {
+                "missed" : 1,
+                "fall" : 0
+            }
+        },
+        {
+            "id": 3,
+            "name" : "philips",
+            "roomNumber" : 202,
+            "state" : {
+                "missed" : 0,
+                "fall" : 1
+            }
+        }
+    ]
+}
