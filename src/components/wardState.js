@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios"
 
 import styles from '../styles/wardState.module.css'
+import WardStateButton from './wardStateButton';
+
 
 function Users() {
     const [users, setUsers] = useState(null);
@@ -39,17 +41,16 @@ function Users() {
     return (
         <div className={styles.wardState}>
             <div className={styles.btnContainer}>
-                <button onClick={fetchUsers}>다시 불러오기</button>
+                <button onClick={fetchUsers}>reload</button>
             </div>
             <ul className={styles.patientContainer}>
                 {users.map(user => (
-                    <div className = {styles.patient} key={user.id}>
-                        <span className = {styles.patientRoomId}>{user.roomNumber}</span> 
-                        <span className = {styles.patientName}>{user.name}</span> 
-                        <div claaName = {styles.patientState}>
-                            <div className = {styles.patientStateBtn}>
-
-                            </div>
+                    <div className={styles.patient} key={user.id}>
+                        <span className={styles.patientRoomId}>{user.roomNumber}</span>
+                        <span className={styles.patientName}>{user.name}</span>
+                        <div style = {{backgroundColor : ''}} claaName={styles.stateBtnContainer}>
+                           <WardStateButton state = {user.state.missed}/>
+                           <WardStateButton state = {user.state.fall}/>
                         </div>
                     </div>
                 ))}
@@ -59,11 +60,11 @@ function Users() {
 };
 
 export default Users;
-/* 
+/*
     <ul className={style.stateBtnContainer}>
         {stateBtns.map(stateBtn => {
             <li key = {stateBtn.id}>{stateBtn.name}</li>
         })}
-    </ul> 
+    </ul>
 */
 //https://jsonplaceholder.typicode.com/users
